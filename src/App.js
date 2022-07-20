@@ -10,7 +10,7 @@ const [counter, setCounter] = useState(0)
   return (
     <div className="">
 
-  <button onClick={()=>setCounter(counter + 1)}>Click Me
+  <button onClick={()=>setCounter(counter + 1)}>this button is functionally pointless now!
   </button>  
     
   <Calculator>
