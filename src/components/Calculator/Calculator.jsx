@@ -12,21 +12,6 @@ const Calculator = (props) => {
         setList([   ...list, logItem])
     }
     const [list, setList] = useState([])
-        
-    // {list.map(el=>{return <div>{el}</div>})}
-
-
-    // To track the first number
-    // add a controlled input
-
-    // To track the second number
-    // add another controlled input
-
-    // To do the math
-    // answer firstNum + secondNum
-
-    // Show the answer
-    // show {answer} in the return
 
     console.log('firstNum', firstNum);
     console.log('secondNum', secondNum);
