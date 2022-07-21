@@ -5,33 +5,25 @@ const Calculator = (props) => {
     const [secondNum, setsecondNum] = useState("");
     const [answer, setAnswer] = useState("");
     const calc = ()=>{
-        const result = Number(firstNum) + Number(secondNum)
+        
+        const result = "5"
         setAnswer(result)
         const logItem = firstNum + " + " + secondNum + " = " + result
         console.log('logItem', logItem)
         setList([   ...list, logItem])
     }
     const [list, setList] = useState([])
-        
-    // {list.map(el=>{return <div>{el}</div>})}
+    const [operator, setOperator] = useState("")
 
 
-    // To track the first number
-    // add a controlled input
 
-    // To track the second number
-    // add another controlled input
 
-    // To do the math
-    // answer firstNum + secondNum
-
-    // Show the answer
-    // show {answer} in the return
 
     console.log('firstNum', firstNum);
     console.log('secondNum', secondNum);
     console.log('answer', answer);
     console.log('list', list);
+    console.log('operator', operator);
 
     return <div>
         math do thingy
@@ -39,6 +31,10 @@ const Calculator = (props) => {
          type="text" 
          onChange={(e)=>setfirstNum(e.target.value)}
          value={firstNum}/>
+        <input
+         type="radio"
+         onClick={(e)=>setOperator(e.target.value)}
+         value={operator}/>
         <input
          type="text"
          onChange={(e)=>setsecondNum(e.target.value)}
