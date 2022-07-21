@@ -5,13 +5,19 @@ const Calculator = (props) => {
     const [secondNum, setsecondNum] = useState("");
     const [answer, setAnswer] = useState("");
     const calc = ()=>{
-        const result = Number(firstNum) + Number(secondNum)
+        
+    
         setAnswer(result)
         const logItem = firstNum + " + " + secondNum + " = " + result
         console.log('logItem', logItem)
         setList([   ...list, logItem])
     }
     const [list, setList] = useState([])
+    const [operator, setOperator] = useState("")
+
+
+
+
 
     console.log('firstNum', firstNum);
     console.log('secondNum', secondNum);
@@ -24,6 +30,10 @@ const Calculator = (props) => {
          type="text" 
          onChange={(e)=>setfirstNum(e.target.value)}
          value={firstNum}/>
+        <input
+         type="radio"
+         onClick={(e)=>setOperator(e.target.value)}
+         value={operator}/>
         <input
          type="text"
          onChange={(e)=>setsecondNum(e.target.value)}
