@@ -6,7 +6,7 @@ const Calculator = (props) => {
     const [answer, setAnswer] = useState("");
     const calc = ()=>{
         
-    
+        const result = "5"
         setAnswer(result)
         const logItem = firstNum + " + " + secondNum + " = " + result
         console.log('logItem', logItem)
@@ -23,6 +23,7 @@ const Calculator = (props) => {
     console.log('secondNum', secondNum);
     console.log('answer', answer);
     console.log('list', list);
+    console.log('operator', operator);
 
     return <div>
         math do thingy
