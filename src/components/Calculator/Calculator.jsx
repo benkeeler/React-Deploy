@@ -5,9 +5,25 @@ const Calculator = (props) => {
     const [secondNum, setsecondNum] = useState("");
     const [answer, setAnswer] = useState("");
     const calc = ()=>{
+        let result = operator
+        switch (operator) {
+            case '+':
+                result = Number(firstNum) + Number(secondNum);
+                break;
+            case '-':
+                result = Number(firstNum) - Number(secondNum);
+                break;
+            case '*':
+                result = Number(firstNum) * Number(secondNum);
+                break;
+            case '/':
+                result = Number(firstNum) / Number(secondNum);
+                break;
+            default:
+                result = "";
+        }
         setAnswer(result)
-        const result = Number(firstNum) + Number(secondNum)
-        const logItem = firstNum + " + " + secondNum + " = " + result
+        const logItem = firstNum + " " + operator + " " + secondNum + " = " + result
         console.log('logItem', logItem)
         setList([   ...list, logItem])
     }
@@ -30,6 +46,18 @@ const Calculator = (props) => {
          type="text" 
          onChange={(e)=>setfirstNum(e.target.value)}
          value={firstNum}/>
+        <button onClick={()=>setOperator('+')}>
+            +
+        </button>
+        <button onClick={()=>setOperator('-')}>
+            -
+        </button>
+        <button onClick={()=>setOperator('*')}>
+            *
+        </button>
+        <button onClick={()=>setOperator('/')}>
+            /
+        </button>
         <input
          type="text"
          onChange={(e)=>setsecondNum(e.target.value)}
