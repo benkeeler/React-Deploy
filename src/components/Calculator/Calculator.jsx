@@ -5,9 +5,8 @@ const Calculator = (props) => {
     const [secondNum, setsecondNum] = useState("");
     const [answer, setAnswer] = useState("");
     const calc = ()=>{
-        
-        const result = "5"
         setAnswer(result)
+        const result = Number(firstNum) + Number(secondNum)
         const logItem = firstNum + " + " + secondNum + " = " + result
         console.log('logItem', logItem)
         setList([   ...list, logItem])
@@ -31,10 +30,6 @@ const Calculator = (props) => {
          type="text" 
          onChange={(e)=>setfirstNum(e.target.value)}
          value={firstNum}/>
-        <input
-         type="radio"
-         onClick={(e)=>setOperator(e.target.value)}
-         value={operator}/>
         <input
          type="text"
          onChange={(e)=>setsecondNum(e.target.value)}
