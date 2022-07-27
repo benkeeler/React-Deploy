@@ -12,7 +12,7 @@ const [counter, setCounter] = useState(0)
 
   <button onClick={()=>setCounter(counter + 1)}>this button is functionally pointless now!
   </button>  
-    New Feature
+  
   <Calculator>
 
   </Calculator>  
