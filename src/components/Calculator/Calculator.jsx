@@ -5,8 +5,8 @@ const Calculator = (props) => {
     const [secondNum, setsecondNum] = useState("");
     const [answer, setAnswer] = useState("");
     const calc = ()=>{
-        setAnswer(result)
-        const result = (Number(firstNum))
+        
+        let result = (Number(firstNum) (operator) (Number(secondNum)))
         switch (operator) {
             case '+':
                 result = firstNum + secondNum;
@@ -18,9 +18,12 @@ const Calculator = (props) => {
                 result = firstNum * secondNum;
                 break;
             case '/':
-                result = firstNum / secondNum
+                result = firstNum / secondNum;
                 break;
+            default:
+                result = "";
         }
+        setAnswer(result)
         //console.log('logItem', logItem)
         //setList([   ...list, logItem])
     }
@@ -43,8 +46,17 @@ const Calculator = (props) => {
          type="text" 
          onChange={(e)=>setfirstNum(e.target.value)}
          value={firstNum}/>
-        <button onClick={setOperator("+")}>
+        <button onClick={()=>setOperator('+')}>
             +
+        </button>
+        <button onClick={()=>setOperator('-')}>
+            -
+        </button>
+        <button onClick={()=>setOperator('*')}>
+            *
+        </button>
+        <button onClick={()=>setOperator('/')}>
+            /
         </button>
         <input
          type="text"
